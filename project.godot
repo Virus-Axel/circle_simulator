@@ -1,0 +1,32 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="circle_simulation"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/bg_color=Color(0.141176, 0.141176, 0.141176, 1)
+boot_splash/image="res://icon.png"
+config/icon="res://icon.png"
+boot_splash/minimum_display_time=1000
+
+[debug]
+
+gdscript/warnings/enable=false
+shader_language/warnings/enable=false
+
+[display]
+
+window/vsync/vsync_mode=0
+
+[editor]
+
+run/main_run_args="--x=1800 --y=800 --rmin=0.25 --rmax=5.0 --g=9.8 --amount=5000"

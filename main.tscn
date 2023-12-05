@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnvsn5sbi74ed"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_jglhs"]
+
+[node name="Node2D" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jglhs")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+top_level = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+text = "Frame Rate: "
+
+[node name="FrameRate" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="FrameRateTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="spawn_timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="FrameRateTimer" to="." method="_on_frame_rate_timer_timeout"]
+[connection signal="timeout" from="spawn_timer" to="." method="_on_spawn_timer_timeout"]
